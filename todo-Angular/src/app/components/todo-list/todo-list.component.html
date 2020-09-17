@@ -1,1 +1,39 @@
-<p>todo-list works!</p>
+<img class="logo" width="300" alt="My Logo" src="Images/PixelAre.png">
+
+<input type="text" class="todo-input" placeholder="What needs to ber done">
+
+<div class="todo-item">
+    <div class="todo-item-left">
+        <input type="checkbox" v-model="todo.completed">
+        <div class="todo-item-label">Todo Item goes here</div>
+    </div>
+    <div class="remove-item">
+        &times;
+    </div>
+</div>
+
+<div class="todo-item">
+    <div class="todo-item-left">
+        <input type="checkbox" v-model="todo.completed">
+        <div class="todo-item-label">Another Item</div>
+    </div>
+    <div class="remove-item">
+        &times;
+    </div>
+</div>
+
+<div class="extra-container">
+    <div><label><input type="checkbox"> Check All</label></div>
+    <div>4 items left</div>
+</div>
+
+<div class="extra-container">
+    <div>
+        <button class="active">All</button>
+        <button>Active</button>
+        <button>Completed</button>
+    </div>
+    <div>
+        <button>Clear Complited</button>
+    </div>
+</div>
