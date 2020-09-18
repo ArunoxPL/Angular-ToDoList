@@ -1,21 +1,14 @@
-<img class="logo" width="300" alt="My Logo" src="Images/PixelAre.png">
+<img class="logo" width="100" alt="My Logo" src="http://pixelartmaker.com/art/c9f1793d62a7102.png">
 
-<input type="text" class="todo-input" placeholder="What needs to ber done">
+<input type="text" class="todo-input" placeholder="What needs to ber done" [(ngModel)]="todoTitle" (keyup.enter)="addTodo()">
+<!-- ngModel -> Adding a Model/ keyup.enter -> adding events -->
 
-<div class="todo-item">
+<div class="todo-item" *ngFor="let todo of todos">
+    <!--foreach statement of our todos objects-->
     <div class="todo-item-left">
-        <input type="checkbox" v-model="todo.completed">
-        <div class="todo-item-label">Todo Item goes here</div>
-    </div>
-    <div class="remove-item">
-        &times;
-    </div>
-</div>
-
-<div class="todo-item">
-    <div class="todo-item-left">
-        <input type="checkbox" v-model="todo.completed">
-        <div class="todo-item-label">Another Item</div>
+        <input type="checkbox">
+        <div class="todo-item-label">{{todo.title}}</div>
+        <!--string interpolation-->
     </div>
     <div class="remove-item">
         &times;
