@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Todo } from '../../interfaces/Todo';
 
 @Component({
   selector: 'todo-list',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit {
-  todos: object[];
+  todos: Todo[];
   todoTitle: string;
   idForTodo: number;
 
@@ -20,19 +21,19 @@ export class TodoListComponent implements OnInit {
       {
         'id': 1,
         'title': 'Finish Angular Screencast',
-        'complited': false,
+        'completed': false,
         'editing': false,
       },
       {
         'id': 2,
         'title': 'Take over the world',
-        'complited': false,
+        'completed': false,
         'editing': false,
       },
       {
         'id': 3,
         'title': 'One mor thing',
-        'complited': false,
+        'completed': false,
         'editing': false,
       },
     ];
@@ -46,11 +47,18 @@ export class TodoListComponent implements OnInit {
     this.todos.push({
       id: this.idForTodo,
       title: this.todoTitle,
-      complited: false,
+      completed: false,
       editing: false
     })
 
     this.todoTitle = '';
     this.idForTodo++;
   }
+
+  deleteTodo(id: number): void {
+    this.todos = this.todos.filter(todo => todo.id != id);
+  }
 }
+
+
+

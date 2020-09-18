@@ -10,7 +10,7 @@
         <div class="todo-item-label">{{todo.title}}</div>
         <!--string interpolation-->
     </div>
-    <div class="remove-item">
+    <div class="remove-item" (click)="deleteTodo(todo.id)">
         &times;
     </div>
 </div>
